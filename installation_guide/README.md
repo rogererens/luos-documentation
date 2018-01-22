@@ -14,9 +14,9 @@ Before explaining you how to install them all, let us introduce briefly the tool
 
 ## How to install them
 
-* [macOS](/installation_guide/macOS.md)
-* [linux](/installation_guide/linux.md)
-* [windows](/installation_guide/windows.md)
+* [MacOS](/installation_guide/macOS.md)
+* [Linux](/installation_guide/linux.md)
+* [Windows](/installation_guide/windows.md)
 
 
 
