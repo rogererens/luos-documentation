@@ -4,7 +4,6 @@ We currently only support one board. Here is it:
 
 <img src="https://media.digikey.com/Photos/STMicro%20Photos/STM32F072B-DISCO.JPG" width="400px">
 
-
 Isn't it beautiful? Well not really but it will do for now to get you started.
 
 It is called STM32F072B-DISCO. You can buy it on our [website](https://www.luos.io/) to support the project, or directly on one of the many resellers out-there.
