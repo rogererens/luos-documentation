@@ -2,7 +2,7 @@
 
 The aim of this first tutorial is to explain the procedure to compile, upload, and run a simple program on the development board STM32F072B-DISCO.
 
-In embedded, hello world examples usually consider simple GPIO manipulation, typically configuring, reading and writing on a digital pin. We will do just that by turning on or off the blue LED  of the STM32F072B-DISCO board according to the state of the user button (the blue one) on the board.
+In embedded, hello world examples usually consider simple GPIO manipulation. Typically configuring, reading and writing on a digital pin. We will do just that by turning on or off the blue LED  of the STM32F072B-DISCO board according to the state of the user button (the blue one) on the board.
 
 ### Step 1: A look at the code
 
