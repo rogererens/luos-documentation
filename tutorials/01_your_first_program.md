@@ -6,7 +6,7 @@ In embedded, hello world examples usually consider simple GPIO manipulation, typ
 
 ### Step 1: A look at the code
 
-The program is called [led_button.rs](../../examples/led_button.rs) and can be found in the [examples](../../examples) folder at the root of the Luos repository. Using the examples folder to store example programs is a convention in Rust.
+The program is called [led_button.rs](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/led_button.rs) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the Luos repository. Using the examples folder to store example programs is a convention in Rust.
 
 For our tutorials, we assume you have basic experience with programming so reading a code should not be problem to you. So let's have directly a look at the code, it is documented in details.
 
@@ -65,7 +65,7 @@ fn main() {
 }
 ```
 
-> Note: For the very advanced and adventurous of you, you can follow the crate tail and to find out how the hal is implemented. Hint - look in the [src/lib.rs](../../src/lib.rs) file and the [Cargo.toml](../../Cargo.toml). They will lead you to [this crate](https://github.com/pollen-robotics/stm32f0/). This is where we go low-level and set some microprocessor registry, explaining all of this is out of the scope of this tutorial. It is Luos jobs to abstract all that complexity for you, so do not worry about it.
+> Note: For the very advanced and adventurous of you, you can follow the crate tail and to find out how the hal is implemented. Hint - look in the [src/lib.rs](https://github.com/pollen-robotics/luos/blob/master/src/lib.rs) file and the [Cargo.toml](https://github.com/pollen-robotics/luos/blob/master/Cargo.toml). They will lead you to [this crate](https://github.com/pollen-robotics/stm32f0/). This is where we go low-level and set some microprocessor registry, explaining all of this is out of the scope of this tutorial. It is Luos jobs to abstract all that complexity for you, so do not worry about it.
 
 At this stage, you already have an idea of the kind of API we will provide to access hardware functionalities. However, the goal of Luos will be to hide these direct hal low-level access.
 
@@ -99,7 +99,7 @@ Compiled code is stored in the target folder at the root of the project. You wil
 cargo clean
 ```
 
-To known more about compiling in Rust, we recommend reading more about Cargo and Xargo, as well as having a look at the [Cargo.toml](../../Cargo.toml) and [Xargo.toml](../../Xargo.toml) files.
+To known more about compiling in Rust, we recommend reading more about Cargo and Xargo, as well as having a look at the [Cargo.toml](https://github.com/pollen-robotics/luos/blob/master/Cargo.toml) and [Xargo.toml](https://github.com/pollen-robotics/luos/blob/master/Xargo.toml) files.
 
 
 ### Step 3: Uploading and running the code

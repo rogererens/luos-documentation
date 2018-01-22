@@ -6,7 +6,7 @@ The example will be to toggle on and off the blue led of the STM32F072B-DISCO bo
 
 ### Step 1: A look at the code
 
-The program is called [led_toggle.rs](../../examples/led_toggle.rs) and can be found in the [examples](../../examples) folder at the root of the Luos repository.
+The program is called [led_toggle.rs](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/led_toggle.rs) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the Luos repository.
 
 ```rust
 /*
@@ -67,7 +67,7 @@ Let's run this program, the led will toggle on and off every second.
 
 ### Step 2: Compiling the code
 
-To compile [led_toggle.rs](../../examples/led_toggle.rs) for the STM32F072B-DISCO board run:
+To compile [led_toggle.rs](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/led_toggle.rs) for the STM32F072B-DISCO board run:
 ```bash
 xargo build --target thumbv6m-none-eabi --example led_toggle
 ```
