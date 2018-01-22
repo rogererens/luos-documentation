@@ -2,8 +2,5 @@
 "gitbook": "3.2.3",
 "title": "Luos Documentation",
 "author": "Pollen Robotics",
-"description": "An introduction to Luos",
-"structure": {
-"readme": "README.md"
-}
+"description": "An introduction to Luos"
 }
