@@ -6,20 +6,19 @@ The example will be to toggle on and off the blue led of the STM32F072B-DISCO bo
 
 ### Step 1: A look at the code
 
-The program is called [led_toggle.rs](**TODO**) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the Luos repository.
+The program is called [led_toggle.rs](**TODO**) and can be found in the [examples](**TODO**) folder at the root of the Luos repository.
 
 ```rust
 // This example demonstrates how to blink an led on/off at a defined frequency
 // It demonstrates how to access low level hardware from luos and use basic time functionalities
-// 
+//
 // Board: STM32F072B-DISCO
 // Tested on: 16/01/2018
 
-// #![no_std] is needed when compiling for embedded
-// We need to specify to the compiler that we don't want to compile the whole standard library
-// as it's way too big and would not work on our tiny micro controller.
-
 #![no_std]
+/// #![no_std] is needed when compiling for embedded
+// We need to specify to the compiler that we don't want to compile the whole standard library
+// because it's way too big and would not work on our tiny microcontroller.
 
 // import the luos crate
 // luos contains a hal module (hardware abastraction layer)
@@ -30,7 +29,7 @@ extern crate luos;
 use luos::hal::{gpio, rcc};
 
 // intialize constants for the pin we want to use
-// gpio::Pin contains enums for each pin available on the microprocessor
+// gpio::Pin contains enums for each pin available on the microcontroller
 // on the STM32F072B-DISCO board:
 // - gpio::Pin::PC7 is a led pin
 const PIN_LED: gpio::Pin = gpio::Pin::PC7;
@@ -42,10 +41,10 @@ fn main() {
     rcc::init();
 
     // declare `led` as an output pin on PIN_LED
-    // `led` is mutable: setting the pin to high or low requires to borrow a the variable
+    // `led` is mutable as setting the pin to high or low requires to modify it.
     let mut led = gpio::Output::setup(PIN_LED);
 
-    // in embedded your main program loops forever
+    // in embedded your program should never end, so we loop forever
     loop {
         // turn led on -> set pin to high
         led.high();
