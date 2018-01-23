@@ -6,7 +6,7 @@ We currently only support one board. Here is it:
 
 Isn't it beautiful? Well not really but it will do for now to get you started.
 
-It is called STM32F072B-DISCO. You can buy it on our [website](https://www.luos.io/) to support the project, or directly on one of the many resellers out-there.
+It is called STM32F072B-DISCO. You can buy it on our [website](https://www.luos.io/product/stm32f0-disco/) to support the project, or directly on one of the many resellers out-there.
 
 Official Luos boards are coming soon, they will be much better and much smaller! The first one will be called the L0, pronounced L-zero:
 
