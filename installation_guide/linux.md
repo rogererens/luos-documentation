@@ -134,7 +134,7 @@ xargo build --target thumbv6m-none-eabi --example led_button
 
 If it all went to plan, you are all set and ready to go!
 
-You will learn more about compiling and uploading an example to a board in the next tutorials. But first lets discover the [development board we will use for this tutorial](../development_boards.md).
+You will learn more about compiling and uploading an example to a board in the next tutorials. But first lets discover the [development board we will use for this tutorial](../tutorials/00_development_boards.md).
 
 ---
 
