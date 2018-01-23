@@ -8,7 +8,7 @@ We will do just that by turning on or off the blue LED  of the STM32F072B-DISCO 
 
 ### Step 1: A look at the code
 
-The program is called [led_button.rs](**TODO**) and can be found in the [examples](**TODO**) folder at the root of the [Luos repository](https://github.com/pollen-robotics/luos). Using the examples folder to store example programs is a convention in Rust. It will also make it easier to compile them.
+The program is called [led_button.rs](https://github.com/pollen-robotics/luos/blob/master/examples/led_button.rs) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/master/examples) folder at the root of the [Luos repository](https://github.com/pollen-robotics/luos) repository. Using the examples folder to store example programs is a convention in Rust. It will also make it easier to compile them.
 
 For our tutorials, we assume you have basic experience with programming so reading a code should not be problem to you. So let's have directly a look at the code, it is documented in details.
 

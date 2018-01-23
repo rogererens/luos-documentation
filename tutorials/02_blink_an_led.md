@@ -6,7 +6,7 @@ The example will be to toggle on and off the blue led of the STM32F072B-DISCO bo
 
 ### Step 1: A look at the code
 
-The program is called [led_toggle.rs](**TODO**) and can be found in the [examples](**TODO**) folder at the root of the Luos repository.
+The program is called [led_toggle.rs](https://github.com/pollen-robotics/luos/blob/master/examples/led_toggle.rs) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/master/examples) folder at the root of the [Luos repository](https://github.com/pollen-robotics/luos) repository.
 
 ```rust
 // This example demonstrates how to blink an led on/off at a defined frequency
