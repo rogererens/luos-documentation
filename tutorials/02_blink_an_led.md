@@ -9,11 +9,11 @@ The example will be to toggle on and off the blue led of the STM32F072B-DISCO bo
 The program is called [led_toggle.rs](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/led_toggle.rs) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the Luos repository.
 
 ```rust
-/// This example demonstrates how to blink an led on/off at a defined frequency
-/// It demonstrates how to access low level hardware from luos and use basic time functionalities
-/// 
-/// Board: STM32F072B-DISCO
-/// Tested on: 16/01/2018
+// This example demonstrates how to blink an led on/off at a defined frequency
+// It demonstrates how to access low level hardware from luos and use basic time functionalities
+// 
+// Board: STM32F072B-DISCO
+// Tested on: 16/01/2018
 
 // #![no_std] is needed when compiling for embedded
 // We need to specify to the compiler that we don't want to compile the whole standard library
