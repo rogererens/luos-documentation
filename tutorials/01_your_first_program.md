@@ -120,7 +120,7 @@ openocd -f $OPENCD_ROOT/interface/stlink-v2.cfg -f $OPENCD_ROOT/target/stm32f0x.
  - ```-f $OPENCD_ROOT/interface/stlink-v2.cfg``` is the description of the XYZ that is on the STM32F072B-DISCO board
  - ```-f $OPENCD_ROOT/target/stm32f0x.cfg``` is the description of the microprocessor that is on the STM32F072B-DISCO board
 
-> Tips: Alternatively we created a [openocd_stm32f0x.sh](../../.scripts/openocd_stm32f0x.sh) script in the [.script](../../.scripts) folder at the root of this repo so you do not have to remember the command by heart
+> Tips: Alternatively we created a [openocd_stm32f0x.sh](https://github.com/pollen-robotics/luos/blob/master/.scripts/openocd_stm32f0x.sh) script in the [.script](https://github.com/pollen-robotics/luos/tree/master/.scripts) folder at the root of this repo so you do not have to remember the command by heart
 
 The connection is now open with the board.
 
