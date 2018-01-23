@@ -1,4 +1,4 @@
-## Our development board
+## Our development boards
 
 We currently only support one board. Here is it:
 
