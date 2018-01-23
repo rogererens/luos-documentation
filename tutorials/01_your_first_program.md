@@ -178,7 +178,7 @@ The functions you really need to know are:
 Let's use them to follow our program:
 
 - first start the program ```arm-none-eabi-gdb target/thumbv6m-none-eabi/debug/examples/led_button```
-- then set a break point in the loop of [led_button.rs](../../examples_led_button.rs) - that is line 38, by running: ```b led_button.rs:38```
+- then set a break point in the loop of [led_button.rs](https://github.com/pollen-robotics/luos/blob/master/examples/led_button.rs) - that is line 38, by running: ```b led_button.rs:38```
 - then continue the program by running: ```c```. The program will stop at the breakpoint line 38
 - you can now go step by step by running ```n``` a few times and notice you are goind throught the ```button.read()``` state and the ```led.low()``` or ```led.high()``` depending on if you press or release the blue button.
 > Note: _gdb_ will show you the code that is about to be executed, so the state of the button will be read only once you proceed to run the code. Same thing with the led that will turn on or off only once you proceed to the next step.
