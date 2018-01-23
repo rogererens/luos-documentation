@@ -8,14 +8,14 @@ We will do just that by turning on or off the blue LED  of the STM32F072B-DISCO 
 
 ### Step 1: A look at the code
 
-The program is called [led_button.rs](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/led_button.rs) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the [Luos repository](https://github.com/pollen-robotics/luos). Using the examples folder to store example programs is a convention in Rust. It will also make it easier to compile them.
+The program is called [led_button.rs](**TODO**) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the [Luos repository](https://github.com/pollen-robotics/luos). Using the examples folder to store example programs is a convention in Rust. It will also make it easier to compile them.
 
 For our tutorials, we assume you have basic experience with programming so reading a code should not be problem to you. So let's have directly a look at the code, it is documented in details.
 
 
 ```rust
-// This example demonstrate how to turn an led on/off depending on the /state of a button.
-// It demonstrate how to access low level hardware from luos.
+// This example demonstrates how to turn an led on/off depending on the state of a button.
+// It demonstrates how to access low level hardware from luos.
 //
 // Board: STM32F072B-DISCO
 // Tested on: 16/01/2018
