@@ -8,7 +8,7 @@ We will do just that by turning on or off the blue LED  of the STM32F072B-DISCO 
 
 ### Step 1: A look at the code
 
-The program is called [led_button.rs](**TODO**) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the [Luos repository](https://github.com/pollen-robotics/luos). Using the examples folder to store example programs is a convention in Rust. It will also make it easier to compile them.
+The program is called [led_button.rs](**TODO**) and can be found in the [examples](**TODO**) folder at the root of the [Luos repository](https://github.com/pollen-robotics/luos). Using the examples folder to store example programs is a convention in Rust. It will also make it easier to compile them.
 
 For our tutorials, we assume you have basic experience with programming so reading a code should not be problem to you. So let's have directly a look at the code, it is documented in details.
 
@@ -20,12 +20,11 @@ For our tutorials, we assume you have basic experience with programming so readi
 // Board: STM32F072B-DISCO
 // Tested on: 16/01/2018
 
-
-// #![no_std] is needed when compiling for embedded
-// We need to specify to the compiler that we don't want to compile the whole standard library
-// as it's way too big and would not work on our tiny micro controller.
-
 #![no_std]
+/// #![no_std] is needed when compiling for embedded
+// We need to specify to the compiler that we don't want to compile the whole standard library
+// because it's way too big and would not work on our tiny microcontroller.
+
 
 // import the luos crate
 // luos contains a hal module (hardware abastraction layer)
@@ -35,7 +34,7 @@ extern crate luos;
 use luos::hal::gpio;
 
 // intialize constants for each pin we want to use
-// gpio::Pin contains enums for each pin available on the microprocessor
+// gpio::Pin contains enums for each pin available on the microcontroller
 // on the STM32F072B-DISCO board:
 // - gpio::Pin::PC7 is a led pin
 // - gpio::Pin::PA0 is the user button (the blue one on the board)
@@ -46,13 +45,12 @@ const PIN_BUTTON: gpio::Pin = gpio::Pin::PA0;
 fn main() {
     // declare `led` as an output pin on PIN_LED
     // `led` is mutable as setting the pin to high or low requires to modify it.
-
     let mut led = gpio::Output::setup(PIN_LED);
 
     // declare `button` as an input pin on PIN_BUTTON
     let button = gpio::Input::setup(PIN_BUTTON);
 
-    // in embedded your main program loops forever
+    // in embedded your program should never end, so we loop forever
     loop {
         // read state of the button
         // the read function returns a boolean: True or False
