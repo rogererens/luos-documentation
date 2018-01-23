@@ -35,7 +35,7 @@ source $HOME/.cargo/env
 
 ###  Step 2: Rust nightly
 
-Because we are working with embedded, we need a more recent version of Rust that the stable or even beta releases. Currently Luos is working with the nightly version of the 25th December 2017. Christmas day that was, why not eh!
+Because we are working with embedded, we need a more recent version of Rust that the stable or even beta releases. Currently Luos is working with the nightly version of the 25th December 2017. Christmas day that was, why not eh! Actually, more recent changes in nightly break some APIs in one of the crate we use [cortex-m-rt](https://github.com/japaric/cortex-m-rt/issues/49) and are thus incompatible. We are working on fixing that real soon.
 
 This version is called _nightly-2017-12-25_. Type the following to install it and check it is successfully installed:
 
@@ -51,14 +51,14 @@ It should look like this:
 > Note that you might end-up with a more recent version of rustc. It is ok.
 
 Under _installed toolchains_ notcie you have two versions:
-- the default stable one for macOS
-- the nightly-2017-12-25 for macOS
+- the default stable one for Mac OS
+- the nightly-2017-12-25 for Mac OS
 
 ###  Step 3: Xargo
 
 _rustup_ installed the official package manager for Rust called Cargo.
 
-Because we work on embedded, we need an additional package manager called Xargo. Xargo sits on top of Cargo and can handle cross-compilation.
+Because we work on embedded, we need an additional tool called Xargo. Xargo sits on top of Cargo and can handle cross-compilation.
 
 To install Xargo simply type:
 
@@ -80,7 +80,7 @@ rustup component add rust-src
 
 ###  Step 5: Cross-compilation toolchain
 
-Again, because we want to compile our code for a microprocessor, we need the right compiler for that. On macOS it is called ```gcc-arm-embedded```. You can install it via homebrew:
+Again, because we want to compile our code for a microprocessor, we need the right compiler for that. On Mac OS it is called ```gcc-arm-embedded```. You can install it via homebrew:
 
 ```bash
 brew cask install gcc-arm-embedded
@@ -94,6 +94,7 @@ You will also need ```openocd```. As above, you can install is via homebrew:
 brew install openocd
 ```
 
+*Note: you can also install them manually if you are not a homebrew user.*
 
 ###  Step 6: Luos
 
@@ -106,6 +107,8 @@ git clone https://github.com/pollen-robotics/luos.git
 ```
 
 You should now have a new luos folder!
+
+*Note: If you do not use git, you can also directly download the zip folder from [GitHub](https://github.com/pollen-robotics/luos) directly.*
 
 Now, remember we installed a specific nightly version of Rust? We now need to tell Rust to use this specific version for all Luos projects. There is a special command in _rustup_ for that:
 

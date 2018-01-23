@@ -1,6 +1,6 @@
 ## Linux installation guide
 
-Currently this is a replicate of the [macOS installation guide](./macOS.md). Only step 5, the installation of the cross-compilation toolchain, differs.
+Currently this is a replicate of the [Mac OS installation guide](./macOS.md). Only step 5, the installation of the cross-compilation toolchain, differs.
 
 For now, it all starts by opening a terminal.
 
@@ -24,7 +24,7 @@ The result is a successful installation!
 
 <img src="https://www.pollen-robotics.com/uploads/installation_guide/macos/install_rustup_ok.png" width="600px">
 
-Now notice _rustup_ is asking you to configure you current shell. It ask you so because your shell need to know the path to some executable, here cargo.
+Now notice _rustup_ is asking you to configure you current shell. It ask you so because your shell needs to know the path to some executable, here cargo.
 
 Simply type the following in the terminal:
 
@@ -37,7 +37,7 @@ source $HOME/.cargo/env
 
 ###  Step 2: Rust nightly
 
-Because we are working with embedded, we need a more recent version of Rust that the stable or even beta releases. Currently Luos is working with the nightly version of the 25th December 2017. Christmas day that was, why not eh!
+Because we are working with embedded, we need a more recent version of Rust that the stable or even beta releases. Currently Luos is working with the nightly version of the 25th December 2017. Christmas day that was, why not eh! Actually, more recent changes in nightly break some APIs in one of the crate we use ([cortex-m-rt](https://github.com/japaric/cortex-m-rt/issues/49)) and are thus incompatible. We are working on fixing that real soon.
 
 This version is called _nightly-2017-12-25_. Type the following to install it and check it is successfully installed:
 
@@ -52,15 +52,15 @@ It should look like this:
 
 > Note that you might end-up with a more recent version of rustc. It is ok.
 
-Under _installed toolchains_ notcie you have two versions:
-- the default stable one for macOS
-- the nightly-2017-12-25 for macOS
+Under _installed toolchains_ notice you have two versions:
+- the default stable one for your system
+- the nightly-2017-12-25 for your system
 
 ###  Step 3: Xargo
 
 _rustup_ installed the offical package manager for Rust called Cargo.
 
-Because we work on embedded, we need an additional package manager called Xargo. Xargo sits on top of Cargo and can handle cross-compilation.
+Because we work on embedded, we need an additional tool called Xargo. Xargo sits on top of Cargo and can handle cross-compilation.
 
 To install Xargo simply type:
 
@@ -82,7 +82,7 @@ rustup component add rust-src
 
 ###  Step 5: Cross-compilation toolchain
 
-Again, because we want to compile our code for a microprocessor, we need the right compiler for that. You can install it via apt-get (or your favorite distribution package manager):
+Again, because we want to compile our code for a microprocessor, we need the right compiler for that. You can install it via apt-get on Ubuntu or Debian (or use your favorite package manager for other distributions):
 
 ```bash
 sudo apt-get install binutils-arm-none-eabi gdb-arm-none-eabi
@@ -90,7 +90,7 @@ sudo apt-get install binutils-arm-none-eabi gdb-arm-none-eabi
 
 And by following the step required, mainly providing your root password.
 
-You will also need ```openocd```. As above, you can install is via apt-get (or your favorite distribution package manager):
+You will also need ```openocd```. As above, you can install via your package manager. Here via apt-get:
 
 ```bash
 sudo apt-get install openocd
@@ -107,6 +107,8 @@ git clone https://github.com/pollen-robotics/luos.git
 ```
 
 You should now have a new luos folder!
+
+*Note: If you do not use git, you can also directly download the zip folder from [GitHub](https://github.com/pollen-robotics/luos) directly.*
 
 Now, remember we installed a specific nightly version of Rust? We now need to tell Rust to use this specific version for all Luos projects. There is a special command in _rustup_ for that:
 

@@ -2,30 +2,33 @@
 
 The aim of this first tutorial is to explain the procedure to compile, upload, and run a simple program on the development board STM32F072B-DISCO.
 
-In embedded, hello world examples usually consider simple GPIO manipulation. Typically configuring, reading and writing on a digital pin. We will do just that by turning on or off the blue LED  of the STM32F072B-DISCO board according to the state of the user button (the blue one) on the board.
+In embedded, hello world examples usually consider simple GPIO manipulation. Typically configuring, reading and writing on a digital pin. GPIOs are general Input/Output used to control basic devices such as leds, buttons, etc.
+
+We will do just that by turning on or off the blue LED  of the STM32F072B-DISCO board according to the state of the user button (the blue one) on the board.
 
 ### Step 1: A look at the code
 
-The program is called [led_button.rs](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/led_button.rs) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the Luos repository. Using the examples folder to store example programs is a convention in Rust.
+The program is called [led_button.rs](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/led_button.rs) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the [Luos repository](https://github.com/pollen-robotics/luos). Using the examples folder to store example programs is a convention in Rust. It will also make it easier to compile them.
 
 For our tutorials, we assume you have basic experience with programming so reading a code should not be problem to you. So let's have directly a look at the code, it is documented in details.
 
 
 ```rust
-/*
-This example demonstrate how to turn an led on/off depending on the state of a button.
-It demonstrate how to access low level hardware from luos.
+/// This example demonstrate how to turn an led on/off depending on the /state of a button.
+/// It demonstrate how to access low level hardware from luos.
+///
+/// Board: STM32F072B-DISCO
+/// Tested on: 16/01/2018
 
-Board: STM32F072B-DISCO
-Tested on: 16/01/2018
-*/
 
 // #![no_std] is needed when compiling for embedded
-//we need to compile parts of the standard library for the target
+// We need to specify to the compiler that we don't want to compile the whole standard library
+// as it's way too big and would not work on our tiny micro controller.
+
 #![no_std]
 
 // import the luos crate
-// luos contains a hal (hardware abastraction layer)
+// luos contains a hal module (hardware abastraction layer)
 // luos::hal contains the functions to access peripherals
 // luos::hal::gpio contains specific functions and constants to access, read and write on pins
 extern crate luos;
@@ -42,7 +45,8 @@ const PIN_BUTTON: gpio::Pin = gpio::Pin::PA0;
 // main() is the start of our program
 fn main() {
     // declare `led` as an output pin on PIN_LED
-    // `led` is mutable: setting the pin to high or low requires to borrow a the variable
+    // `led` is mutable as setting the pin to high or low requires to modify it.
+
     let mut led = gpio::Output::setup(PIN_LED);
 
     // declare `button` as an input pin on PIN_BUTTON
@@ -65,7 +69,7 @@ fn main() {
 }
 ```
 
-> Note: For the very advanced and adventurous of you, you can follow the crate tail and to find out how the hal is implemented. Hint - look in the [src/lib.rs](https://github.com/pollen-robotics/luos/blob/master/src/lib.rs) file and the [Cargo.toml](https://github.com/pollen-robotics/luos/blob/master/Cargo.toml). They will lead you to [this crate](https://github.com/pollen-robotics/stm32f0/). This is where we go low-level and set some microprocessor registry, explaining all of this is out of the scope of this tutorial. It is Luos jobs to abstract all that complexity for you, so do not worry about it.
+> Note: For the very advanced and adventurous of you, you can follow the crate tail and find out how the hal is implemented. Hint - look in the [src/lib.rs](https://github.com/pollen-robotics/luos/blob/master/src/lib.rs) file and the [Cargo.toml](https://github.com/pollen-robotics/luos/blob/master/Cargo.toml). They will lead you to [this crate](https://github.com/pollen-robotics/stm32f0/). This is where we go low-level and set some microprocessor registry, explaining all of this is out of the scope of this tutorial and you can find some good documentation directly on the tools developed by the [amazing Rust for embedded community](https://github.com/japaric/svd2rust). It is Luos jobs to abstract all that complexity for you, so do not worry about it.
 
 At this stage, you already have an idea of the kind of API we will provide to access hardware functionalities. However, the goal of Luos will be to hide these direct hal low-level access.
 
@@ -104,9 +108,9 @@ To known more about compiling in Rust, we recommend reading more about Cargo and
 
 ### Step 3: Uploading and running the code
 
-At the moment this step requires to have two terminal open at once. One will run ```openocd``` to detect and make a link with the board. The other will run ```arm-none-eabi-gdb``` to push the code on the board through that connection.
+At the moment this step requires to have two terminals open at once. One will run ```openocd``` to detect and make a link with the board. The other will run ```arm-none-eabi-gdb``` to push the code on the board through that connection.
 
-But first, you need to plug your board to the computer via USB. There is two usb port, the one to upload the program is the one in the middle of the board. A picture is better than a thousand words.
+But first, you need to plug your board to the computer via USB. There is two usb ports, the one to upload the program is the one in the middle of the board. A picture is better than a thousand words.
 
 <img src="https://www.pollen-robotics.com/uploads/tutorials/01/usb_to_board.jpg">
 
@@ -128,7 +132,7 @@ arm-none-eabi-gdb target/thumbv6m-none-eabi/debug/examples/led_button
 ```
 Where ```target/thumbv6m-none-eabi/debug/examples/led_button``` is the folder containing the compiled code to be uploaded to the board.
 
-> Note: This command as written assumes you are currently at luos root folder. Change the path argument accordingly
+> Note: This command as written assumes you are currently at luos root folder. Change the path argument accordingly if it's not the case.
 
 Some things will be displayed on each terminal certifying a connection is being made with the board and the program as been sent.
 
@@ -175,8 +179,7 @@ The functions you really need to know are:
 
 Let's use them to follow our program:
 
-- first start the program ```
-arm-none-eabi-gdb target/thumbv6m-none-eabi/debug/examples/led_button```
+- first start the program ```arm-none-eabi-gdb target/thumbv6m-none-eabi/debug/examples/led_button```
 - then set a break point in the loop of [led_button.rs](../../examples_led_button.rs) - that is line 38, by running: ```b led_button.rs:38```
 - then continue the program by running: ```c```. The program will stop at the breakpoint line 38
 - you can now go step by step by running ```n``` a few times and notice you are goind throught the ```button.read()``` state and the ```led.low()``` or ```led.high()``` depending on if you press or release the blue button.

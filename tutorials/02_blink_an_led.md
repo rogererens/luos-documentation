@@ -9,20 +9,20 @@ The example will be to toggle on and off the blue led of the STM32F072B-DISCO bo
 The program is called [led_toggle.rs](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/led_toggle.rs) and can be found in the [examples](https://github.com/pollen-robotics/luos/blob/tutorial-led-button/examples/) folder at the root of the Luos repository.
 
 ```rust
-/*
-This example demonstrate how to blink an led on/off at a defined frequency
-It demonstrate how to access low level hardware from luos and use basic time functionalities
-
-Board: STM32F072B-DISCO
-Tested on: 16/01/2018
-*/
+/// This example demonstrates how to blink an led on/off at a defined frequency
+/// It demonstrates how to access low level hardware from luos and use basic time functionalities
+/// 
+/// Board: STM32F072B-DISCO
+/// Tested on: 16/01/2018
 
 // #![no_std] is needed when compiling for embedded
-//we need to compile parts of the standard library for the target
+// We need to specify to the compiler that we don't want to compile the whole standard library
+// as it's way too big and would not work on our tiny micro controller.
+
 #![no_std]
 
 // import the luos crate
-// luos contains a hal (hardware abastraction layer)
+// luos contains a hal module (hardware abastraction layer)
 // luos::hal contains the functions to access peripherals
 // luos::hal::gpio contains specific functions and constants to access, read and write on pins
 // luos::hal::rcc contains function relative to clocks
@@ -85,7 +85,7 @@ arm-none-eabi-gdb target/thumbv6m-none-eabi/debug/examples/led_toggle
 ```
 Where ```target/thumbv6m-none-eabi/debug/examples/led_toggle``` is the folder containing the compiled code to be uploaded to the board.
 
-> Note: This command as written assumes you are currently at luos root folder. Change the path argument accordingly
+> Note: This command as written assumes you are currently at luos root folder. Change the path argument accordingly if it's not the case.
 
 To start executing the code on the board, simply type ```continue``` and press enter.
 
