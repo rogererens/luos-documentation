@@ -10,4 +10,6 @@
   * [Development Boards](tutorials/00_development_boards.md)
   * [Your first program](tutorials/01_your_first_program.md)
   * [Blink a Led](tutorials/02_blink_an_led.md)
-
+  * [Use PWM](tutorials/03_led_brightness_with_pwm.md)
+  * [Read analog inputs](tutorials/04_led_brightness_via_potentiometer.md)
+  * [Control a servo](tutorials/05_servo_control_via_potentiometer.md)
