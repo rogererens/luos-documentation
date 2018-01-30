@@ -1,6 +1,6 @@
 ## Reading analog values
 
-The aim of this first tutorial is to introduce ADC functionalities. ADC stands for [analog to digital converter](https://en.wikipedia.org/wiki/Analog-to-digital_converter), it allows to capture the voltage value applied to a pin in a digital form.
+The aim of this tutorial is to introduce ADC functionalities. ADC stands for [analog to digital converter](https://en.wikipedia.org/wiki/Analog-to-digital_converter), it allows to capture the voltage value applied to a pin in a digital form.
 
 The example will be to change the brightness of the blue led of the STM32F072B-DISCO board depending on the position of a potentiometer.
 

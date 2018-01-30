@@ -1,6 +1,6 @@
 ## Taking a deep breath, using PWM to change led brightness
 
-The aim of this first tutorial is to introduce [PWM](https://en.wikipedia.org/wiki/Pulse-width_modulation) functionalities. More specifically, we will experiment with creating and changing the [duty cycle](https://en.wikipedia.org/wiki/Duty_cycle) of a PWM signal.
+The aim of this tutorial is to introduce [PWM](https://en.wikipedia.org/wiki/Pulse-width_modulation) functionalities. More specifically, we will experiment with creating and changing the [duty cycle](https://en.wikipedia.org/wiki/Duty_cycle) of a PWM signal.
 
 The example will be to change periodically and smoothly the brightness of the blue led of the STM32F072B-DISCO board at a desired frequency.
 

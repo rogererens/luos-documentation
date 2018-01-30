@@ -1,6 +1,6 @@
 ## Build a remote controlled elastic gun
 
-The aim of this first tutorial is to introduce servomotors control functionalities.You can learn more about what a servomotor is and how to control it [here](https://learn.sparkfun.com/tutorials/hobby-servo-tutorial).
+The aim of this tutorial is to introduce servomotors control functionalities.You can learn more about what a servomotor is and how to control it [here](https://learn.sparkfun.com/tutorials/hobby-servo-tutorial).
 
 The example will be to control the position of a servo motor depending on the position of a potentiometer.
 
