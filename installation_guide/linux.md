@@ -50,7 +50,7 @@ It should look like this:
 
 <img src="https://www.pollen-robotics.com/uploads/installation_guide/macos/rustup_install_nightly.png" width="600px">
 
-> Note that you might end-up with a more recent version of rustc. It is ok.
+> Note that you might end up with a more recent stable version of rustc. It is ok.
 
 Under _installed toolchains_ notice you have two versions:
 - the default stable one for your system
