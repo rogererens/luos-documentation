@@ -81,7 +81,7 @@ To compile your code for an embedded target, you need to use the ```build``` of 
 
 Our target for the STM32F072B-DISCO board is called ```thumbv6m-none-eabi```.
 
-The program is in the examples folder. The examples folder has been standardized in Rust for a reason, it makes it easier for people to share and work on Rust project as they all share the same structure. So they also built in Cargo, and Xargo, a compilation option specific for programs in the examples folder, it is ```--example```
+The program is in the examples folder. The examples folder has been standardized in Rust for a reason, it makes it easier for people to share and work on Rust project as they all share the same structure. So they also built in Cargo, and Xargo, a compilation option specific for programs in the examples folder, it is ```--example``` (Note that the option name has no trailing 's', unlike the folder name).
 
 Our final command to compile our examples for the STM32F072B-DISCO board is:
 ```bash
